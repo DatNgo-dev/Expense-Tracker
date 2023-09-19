@@ -36,7 +36,7 @@ This will create a basic `todos` table, enable Row Level Security (RLS), and wri
 
 To seed your `todos` table with some dummy data, run the contents of the [seed.sql](./supabase/seed.sql) file.
 
-NB - If you want to use an ORM please read `00-installing-an-ORM.md`
+NB - If you want to use an ORM please read `02-installing-an-ORM.md`
 
 ## Feedback and issues
 
