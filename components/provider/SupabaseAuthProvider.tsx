@@ -68,7 +68,7 @@ export default function SupabaseAuthProvider({
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "github",
       options: {
-        redirectTo: "http://localhost:3000/api/callback",
+        redirectTo: "http://localhost:3000/auth/callback",
       },
     });
   };

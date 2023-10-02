@@ -1,7 +1,13 @@
-import Link from 'next/link'
-import Messages from './messages'
+"use client";
+
+import Link from "next/link";
+import Messages from "./messages";
+import { useAuth } from "@/components/provider/SupabaseAuthProvider";
+import { useEffect } from "react";
 
 export default function Login() {
+  const { signInWithGithub, user } = useAuth();
+
   return (
     <div className="flex-1 flex flex-col w-full px-8 sm:max-w-md justify-center gap-2">
       <Link
@@ -21,7 +27,7 @@ export default function Login() {
           className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1"
         >
           <polyline points="15 18 9 12 15 6" />
-        </svg>{' '}
+        </svg>
         Back
       </Link>
 
@@ -30,6 +36,10 @@ export default function Login() {
         action="/auth/sign-in"
         method="post"
       >
+        <button type="button" onClick={signInWithGithub}>
+          Login with GitHub
+        </button>
+
         <label className="text-md" htmlFor="email">
           Email
         </label>
@@ -61,5 +71,5 @@ export default function Login() {
         <Messages />
       </form>
     </div>
-  )
+  );
 }
