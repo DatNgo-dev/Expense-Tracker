@@ -3,10 +3,9 @@
 import Link from "next/link";
 import Messages from "./messages";
 import { useAuth } from "@/components/provider/SupabaseAuthProvider";
-import { useEffect } from "react";
 
 export default function Login() {
-  const { signInWithGithub, user } = useAuth();
+  const { signInWithGithub } = useAuth();
 
   return (
     <div className="flex-1 flex flex-col w-full px-8 sm:max-w-md justify-center gap-2">
